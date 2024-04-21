@@ -14,7 +14,19 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  sumAB = a + b
+  sumBC = b + c
+  sumCA = c + a
+  unless (c < sumAB) && (b < sumCA) && (a < sumBC)
+    raise TriangleError
+  end
+  if  a == b && b == c 
+     :equilateral
+  elsif a == b || b == c || a == c
+     :isosceles
+  else 
+     :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
